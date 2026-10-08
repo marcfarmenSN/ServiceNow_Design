@@ -1,0 +1,23 @@
+/* ServiceNow Sans — self-hosted brand fonts (fonts/ at project root). */
+@font-face{font-family:"ServiceNow Sans";src:url("../fonts/ServiceNowSans-Thin.ttf") format("truetype");font-weight:100;font-style:normal;font-display:swap}
+@font-face{font-family:"ServiceNow Sans";src:url("../fonts/ServiceNowSans-ThinItalic.ttf") format("truetype");font-weight:100;font-style:italic;font-display:swap}
+@font-face{font-family:"ServiceNow Sans";src:url("../fonts/ServiceNowSans-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"ServiceNow Sans";src:url("../fonts/ServiceNowSans-LightItalic.ttf") format("truetype");font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:"ServiceNow Sans";src:url("../fonts/ServiceNowSans-Book.ttf") format("truetype");font-weight:350;font-style:normal;font-display:swap}
+@font-face{font-family:"ServiceNow Sans";src:url("../fonts/ServiceNowSans-BookItalic.ttf") format("truetype");font-weight:350;font-style:italic;font-display:swap}
+@font-face{font-family:"ServiceNow Sans";src:url("../fonts/ServiceNowSans-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"ServiceNow Sans";src:url("../fonts/ServiceNowSans-RegularItalic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"ServiceNow Sans";src:url("../fonts/ServiceNowSans-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"ServiceNow Sans";src:url("../fonts/ServiceNowSans-MediumItalic.ttf") format("truetype");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"ServiceNow Sans";src:url("../fonts/ServiceNowSans-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"ServiceNow Sans";src:url("../fonts/ServiceNowSans-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:"ServiceNow Sans Display";src:url("../fonts/ServiceNowSans-DisplayMedium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"ServiceNow Sans Display";src:url("../fonts/ServiceNowSans-DisplayBold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"ServiceNow Mono";src:url("../fonts/ServiceNowSansMono-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+
+:root{
+  --font-brand:"ServiceNow Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --font-display:"ServiceNow Sans Display","ServiceNow Sans",-apple-system,sans-serif;
+  --font-mono:"ServiceNow Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --weight-thin:100;--weight-light:300;--weight-book:350;--weight-regular:400;--weight-medium:500;--weight-bold:700;--weight-display:700;
+}

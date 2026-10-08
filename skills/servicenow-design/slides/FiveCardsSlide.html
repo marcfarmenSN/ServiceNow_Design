@@ -1,0 +1,22 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Five columns with cards" subtitle="Template cards: header + body" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Five columns with cards</title><link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../_ds_bundle.js"></script><script src="stage.js"></script>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#021c29}#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;font-family:var(--font-brand);color:#fff}</style></head>
+<body><div id="stage" data-screen-label="Five columns with cards"></div>
+<script type="text/babel">
+const { SlideFrame, Logo, Headline, StatCard, FeatureCard, Card, Pill, CapabilityTile, Icon } = window.ServiceNowDesignSystem_82fff6;
+const BG = n => '../assets/backgrounds/bg-' + n + '.png';
+const cards=[['Sense','Workflow Data Fabric connects to over 450 systems with no duplication.'],['Decide','Context Engine grounds every AI model in your business context.'],['Act','Agent Orchestrator and Agentic Playbooks execute work end-to-end.'],['Secure','AI Control Tower governs every human, machine and AI agent identity.'],['Otto','One AI experience across voice, chat, search, web and apps.']];
+function Slide(){return(<SlideFrame background={BG('content')} pageNumber={6}>
+<div style={{position:'absolute',left:86,top:84,width:1747,fontSize:80,fontWeight:700,lineHeight:1.02}}>Four capabilities, one platform</div>
+<div style={{position:'absolute',left:86,top:173,width:1747,fontSize:40,fontWeight:300}}>You start it. Otto finishes it.</div>
+{cards.map(([h,b],i)=>(<Card key={i} variant="template" padding="24px 30px" style={{position:'absolute',left:[86,441,797,1153,1509][i],top:282,width:324,height:692}}>
+<div style={{fontSize:32,fontWeight:700,color:'var(--sn-wasabi-green)',height:90,display:'flex',alignItems:'flex-end'}}>{h}</div>
+<div style={{fontSize:24,fontWeight:300,lineHeight:1.25,marginTop:20}}>{b}</div></Card>))}
+</SlideFrame>)}
+ReactDOM.createRoot(document.getElementById('stage')).render(<Slide/>); window.__fitStage && window.__fitStage();
+</script></body></html>

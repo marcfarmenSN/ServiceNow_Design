@@ -1,0 +1,12 @@
+{
+  "name": "servicenow-design-marketplace",
+  "owner": { "name": "ServiceNow Brand Design" },
+  "plugins": [
+    {
+      "name": "servicenow-design",
+      "source": "./",
+      "description": "ServiceNow brand design system: PowerPoint decks (13.33 x 7.5 in) and animations.",
+      "version": "1.0.0"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "slides": [
+    {
+      "layout": "Cover Green",
+      "title": "Put AI to work for people",
+      "subtitle": "Customer briefing · October 2026",
+      "notes": "Welcome and introductions."
+    },
+    {
+      "layout": "Safe Harbor"
+    },
+    {
+      "layout": "Title and Content",
+      "title": "Businesses need more than just intelligence",
+      "subtitle": "Most AI stops at answers. ServiceNow keeps going.",
+      "body": [[
+        "Sense context across 450+ connected systems",
+        "Decide with the enterprise graph and CMDB",
+        "Act with Agent Orchestrator and Agentic Playbooks",
+        {"text": "Governed end to end by AI Control Tower", "level": 1}
+      ]]
+    },
+    {
+      "layout": "Divider Blue",
+      "title": "The platform"
+    },
+    {
+      "layout": "Title with Three Columns and Headers",
+      "title": "One platform. Three outcomes.",
+      "body": ["Sense", "Every system, connected.", "Decide", "Grounded in enterprise context.", "Act", "Work that finishes itself."]
+    },
+    {
+      "layout": "Statement Green",
+      "title": "You start it. Otto finishes it."
+    },
+    {
+      "layout": "Thank You Blue",
+      "title": "Thank you"
+    }
+  ]
+}

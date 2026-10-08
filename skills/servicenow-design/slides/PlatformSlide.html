@@ -1,0 +1,25 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Platform diagram" subtitle="Sense · Decide · Act · Secure tiles with ANY capsules" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Platform diagram</title><link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../_ds_bundle.js"></script><script src="stage.js"></script>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#021c29}#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;font-family:var(--font-brand);color:#fff}</style></head>
+<body><div id="stage" data-screen-label="Platform diagram"></div>
+<script type="text/babel">
+const { SlideFrame, Logo, Headline, StatCard, FeatureCard, Card, Pill, CapabilityTile, Icon } = window.ServiceNowDesignSystem_82fff6;
+const BG = n => '../assets/backgrounds/bg-' + n + '.png';
+const T=({hue,title,label,items,x})=>(<CapabilityTile hue={hue} title={title} label={label} style={{position:'absolute',left:x,top:300,width:540,height:420}}>
+<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'10px 24px',fontSize:22,fontWeight:500,marginTop:14,width:'100%'}}>{items.map(i=><div key={i}>{i}</div>)}</div></CapabilityTile>);
+function Slide(){return(<SlideFrame hue="green" pageNumber={7}>
+<Headline lead="The AI control tower" rest="for business reinvention" size={72} align="center" style={{position:'absolute',left:0,right:0,top:84}}/>
+<div style={{position:'absolute',left:290,top:190,width:1340,height:70,borderRadius:18,border:'2px solid rgba(255,255,255,.35)',background:'rgba(3,45,66,.5)',display:'flex',alignItems:'center',justifyContent:'space-around',fontSize:24,fontWeight:500}}>
+<span>IT</span><span>CRM</span><span>Security &amp; Risk</span><Pill scale={.8}>Autonomous Workflows</Pill><span>Employee Experience</span><span>App Development</span></div>
+<T hue="sense" title="Sense" label="Data" x={290} items={['Workflow Data Fabric','MCP & A2A','RaptorDB','CMDB']}/>
+<T hue="decide" title="Decide" label="AI Model" x={690+0} items={['AI Skills','Context Engine','Knowledge Graph','Analytics & BI']}/>
+<T hue="act" title="Act" label="Workflow" x={1090} items={['AI Specialists','Agent Orchestrator','App Engine','Build Agent']}/>
+<CapabilityTile hue="secure" title="Secure" label="System, Identity, Asset" style={{position:'absolute',left:240,top:740,width:1440,height:190}}/>
+</SlideFrame>)}
+ReactDOM.createRoot(document.getElementById('stage')).render(<Slide/>); window.__fitStage && window.__fitStage();
+</script></body></html>

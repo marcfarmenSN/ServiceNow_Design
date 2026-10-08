@@ -1,0 +1,25 @@
+/* Type scale. Source values are PowerPoint points on a 13.33in slide; px below are at the 1920×1080 canvas (1pt = 2px).
+   Titles: ServiceNow Sans Bold, PowerPoint line spacing 85% = CSS line-height 1.02 (never below 1.0 on multi-line titles, or descenders collide). Body: ServiceNow Sans Light, line-height 100%, 10pt space-after. */
+:root{
+  --type-poster:240px;          /* Figma cover H1, lh .94 */
+  --type-cover:144px;           /* 72pt cover / divider / statement */
+  --type-quote:120px;           /* 60pt */
+  --type-title:80px;            /* 40pt slide title */
+  --type-subtitle:40px;         /* 20pt */
+  --type-body-1:36px;           /* 18pt first level */
+  --type-body-2:32px;           /* 16pt second level / card header */
+  --type-body-3:28px;           /* 14pt third+ level */
+  --type-card-body:24px;        /* 12pt card copy */
+  --type-footer:16px;           /* 8pt source / footer */
+  --type-legal:12px;            /* 6pt copyright */
+
+  --leading-title:.85;
+  --leading-poster:.94;
+  --leading-body:1;
+  --leading-read:1.25;
+  --space-paragraph:20px;       /* 10pt space-after */
+  --tracking-mono:.08em;
+
+  /* Web/UI scale (derived 1:1 for 1280-wide docs & pages) */
+  --type-ui-display:64px;--type-ui-h1:48px;--type-ui-h2:32px;--type-ui-h3:24px;--type-ui-body:16px;--type-ui-small:14px;--type-ui-caption:12px;
+}

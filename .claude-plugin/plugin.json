@@ -1,0 +1,7 @@
+{
+  "name": "servicenow-design",
+  "version": "1.0.0",
+  "description": "ServiceNow brand design system for Claude: on-brand PowerPoint decks (13.33 x 7.5 in, from the Corporate Template v2.3) and HTML/MP4 animations.",
+  "author": { "name": "ServiceNow Brand Design" },
+  "keywords": ["servicenow", "brand", "powerpoint", "pptx", "animation", "design-system"]
+}

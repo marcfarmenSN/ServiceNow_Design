@@ -1,0 +1,68 @@
+/* Brand palette — exact values from the Corporate PowerPoint Template theme (custom colors) + Figma variables. */
+:root{
+  /* Core */
+  --sn-infinite-blue:#032D42;   /* dk2 — primary background ("Infinite/Infinity Blue") */
+  --sn-wasabi-green:#63DF4E;    /* accent1 — primary accent, positive callouts, growth */
+  --sn-white:#FFFFFF;
+  --sn-black:#000000;
+  --sn-bright-orange:#FFBC39;   /* negative callouts / warnings only */
+
+  /* Brights */
+  --sn-blue:#52B8FF;
+  --sn-indigo:#7661FF;
+  --sn-purple:#BF71F2;
+
+  /* Lights (tints) */
+  --sn-light-wasabi:#DEFFD9;
+  --sn-light-blue:#C2E6FF;
+  --sn-light-indigo:#BDBAFD;
+  --sn-light-purple:#DEC3F7;
+
+  /* Mids */
+  --sn-mid-wasabi:#005F1E;
+  --sn-mid-blue:#035D99;
+  --sn-mid-indigo:#3C288D;
+  --sn-mid-purple:#412C58;
+
+  /* Darks */
+  --sn-dark-wasabi:#003310;
+  --sn-dark-blue:#032D42;       /* = Infinite Blue */
+  --sn-dark-indigo:#14103B;
+  --sn-dark-purple:#1E012E;
+
+  /* Neutrals seen in template */
+  --sn-gray-f2:#F2F2F2;
+  --sn-gray-d9:#D9D9D9;
+  --sn-white-50:rgba(255,255,255,.5);
+
+  /* Legacy icon-library accent (Wasabi 2022 theme) */
+  --sn-icon-green:#62D84E;
+
+  /* ---- Semantic aliases (default = dark brand surface) ---- */
+  --surface-page:var(--sn-infinite-blue);
+  --surface-card:rgba(3,45,66,.053);          /* template card: tx2 @ 5.289% */
+  --surface-card-glass:linear-gradient(135deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.03) 100%);
+  --surface-light:var(--sn-white);
+  --surface-light-alt:var(--sn-gray-f2);
+
+  --text-primary:var(--sn-white);
+  --text-secondary:rgba(255,255,255,.72);
+  --text-accent:var(--sn-wasabi-green);
+  --text-accent-alt:var(--sn-blue);
+  --text-on-light:var(--sn-infinite-blue);
+  --text-on-accent:var(--sn-infinite-blue);
+
+  --border-card:rgba(255,255,255,1);          /* template: 0.5pt bg1 line */
+  --border-card-soft:rgba(255,255,255,.18);   /* pitch-deck glass cards */
+  --border-divider:rgba(255,255,255,.2);
+
+  --status-positive:var(--sn-wasabi-green);
+  --status-warning:var(--sn-bright-orange);
+
+  --link:var(--sn-wasabi-green);
+  --link-visited:var(--sn-blue);
+
+  /* Chart order (theme order: green, blue, indigo, purple, then lights) */
+  --chart-1:var(--sn-wasabi-green);--chart-2:var(--sn-blue);--chart-3:var(--sn-indigo);--chart-4:var(--sn-purple);
+  --chart-5:var(--sn-light-wasabi);--chart-6:var(--sn-light-blue);--chart-7:var(--sn-light-indigo);--chart-8:var(--sn-light-purple);
+}

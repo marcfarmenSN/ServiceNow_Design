@@ -1,0 +1,25 @@
+/* Brand gradient backgrounds — from "ServiceNow Gradients_RGB.fig".
+   Dark = Infinite Blue base + two 50% soft glows (upper-right + lower-left). Brand marketing. Dark Green is DEFAULT.
+   Mid  = two-stop linear base + glows. Owned channels. Order single → multiple executions: Green, Blue, Indigo, Purple. */
+:root{
+  --grad-mid-green-base:linear-gradient(119.358deg,#005F1E 0%,#003310 100%); /* @kind color */
+  --grad-mid-blue-base:linear-gradient(119.358deg,#035D99 0%,#032D42 100%); /* @kind color */
+  --grad-mid-indigo-base:linear-gradient(119.358deg,#3C288D 0%,#14103B 100%); /* @kind color */
+  --grad-mid-purple-base:linear-gradient(119.358deg,#412C58 0%,#1E012E 100%); /* @kind color */
+
+  /* glow pairs: upper-right / lower-left */
+  --glow-green-ur:#52B8FF;--glow-green-ll:#63DF4E;
+  --glow-blue-ur:#7661FF;--glow-blue-ll:#52B8FF;
+  --glow-indigo-ur:#BF71F2;--glow-indigo-ll:#7661FF;
+  --glow-purple-ur:#7661FF;--glow-purple-ll:#BF71F2;
+
+  /* CSS-only approximations (radial) for quick fills */
+  --grad-dark-green:radial-gradient(55% 60% at 98% 3%,rgba(82,184,255,.42) 0%,rgba(82,184,255,0) 100%),radial-gradient(60% 55% at 4% 107%,rgba(99,223,78,.36) 0%,rgba(99,223,78,0) 100%),#032D42; /* @kind color */
+  --grad-dark-blue:radial-gradient(55% 60% at 98% 3%,rgba(118,97,255,.42) 0%,rgba(118,97,255,0) 100%),radial-gradient(60% 55% at 4% 107%,rgba(82,184,255,.36) 0%,rgba(82,184,255,0) 100%),#032D42; /* @kind color */
+  --grad-dark-indigo:radial-gradient(55% 60% at 98% 3%,rgba(191,113,242,.42) 0%,rgba(191,113,242,0) 100%),radial-gradient(60% 55% at 4% 107%,rgba(118,97,255,.36) 0%,rgba(118,97,255,0) 100%),#032D42; /* @kind color */
+  --grad-dark-purple:radial-gradient(55% 60% at 98% 3%,rgba(118,97,255,.42) 0%,rgba(118,97,255,0) 100%),radial-gradient(60% 55% at 4% 107%,rgba(191,113,242,.36) 0%,rgba(191,113,242,0) 100%),#032D42; /* @kind color */
+  --grad-mid-green:radial-gradient(55% 60% at 98% 3%,rgba(82,184,255,.5) 0%,rgba(82,184,255,0) 100%),radial-gradient(60% 55% at 4% 107%,rgba(99,223,78,.55) 0%,rgba(99,223,78,0) 100%),linear-gradient(119.358deg,#005F1E 0%,#003310 100%); /* @kind color */
+  --grad-mid-blue:radial-gradient(55% 60% at 98% 3%,rgba(118,97,255,.5) 0%,rgba(118,97,255,0) 100%),radial-gradient(60% 55% at 4% 107%,rgba(82,184,255,.55) 0%,rgba(82,184,255,0) 100%),linear-gradient(119.358deg,#035D99 0%,#032D42 100%); /* @kind color */
+  --grad-mid-indigo:radial-gradient(55% 60% at 98% 3%,rgba(191,113,242,.5) 0%,rgba(191,113,242,0) 100%),radial-gradient(60% 55% at 4% 107%,rgba(118,97,255,.55) 0%,rgba(118,97,255,0) 100%),linear-gradient(119.358deg,#3C288D 0%,#14103B 100%); /* @kind color */
+  --grad-mid-purple:radial-gradient(55% 60% at 98% 3%,rgba(118,97,255,.5) 0%,rgba(118,97,255,0) 100%),radial-gradient(60% 55% at 4% 107%,rgba(191,113,242,.55) 0%,rgba(191,113,242,0) 100%),linear-gradient(119.358deg,#412C58 0%,#1E012E 100%); /* @kind color */
+}

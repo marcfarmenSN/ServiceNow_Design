@@ -1,0 +1,21 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Cover" subtitle="Cover Green — title, speaker, big wordmark" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Cover</title><link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../_ds_bundle.js"></script><script src="stage.js"></script>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#021c29}#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;font-family:var(--font-brand);color:#fff}</style></head>
+<body><div id="stage" data-screen-label="Cover"></div>
+<script type="text/babel">
+const { SlideFrame, Logo, Headline, StatCard, FeatureCard, Card, Pill, CapabilityTile, Icon } = window.ServiceNowDesignSystem_82fff6;
+const BG = n => '../assets/backgrounds/bg-' + n + '.png';
+function Slide(){return(<SlideFrame background={BG('cover-green')} showLogo={false}>
+<div style={{position:'absolute',left:86,top:86,width:1747,height:565,display:'flex',alignItems:'flex-end',fontSize:144,fontWeight:700,lineHeight:1.02,letterSpacing:'-0.02em'}}>Put AI to work<br/>for people</div>
+<div style={{position:'absolute',left:86,top:652,width:1006,fontSize:40,fontWeight:500,lineHeight:1.1,paddingTop:40}}>Speaker first and last name</div>
+<div style={{position:'absolute',left:86,top:809,width:1006,fontSize:32,fontWeight:300}}>Job title and company</div>
+<Logo height={145} style={{position:'absolute',left:1373,top:917}}/>
+<div style={{position:'absolute',left:86,top:1009,fontSize:12,fontWeight:300,opacity:.85}}>© 2026 ServiceNow, Inc. All Rights Reserved.</div>
+</SlideFrame>)}
+ReactDOM.createRoot(document.getElementById('stage')).render(<Slide/>); window.__fitStage && window.__fitStage();
+</script></body></html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ServiceNow brand animation</title>
+<link rel="stylesheet" href="../../tokens/fonts.css">
+<link rel="stylesheet" href="../../tokens/colors.css">
+<link rel="stylesheet" href="../../tokens/gradients.css">
+<style>
+  html,body{margin:0;height:100%;background:#021c29;overflow:hidden}
+  #stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;overflow:hidden;
+    font-family:"ServiceNow Sans",sans-serif;color:#fff;background:var(--grad-dark-green)}
+  .layer{position:absolute;inset:0;opacity:0}
+  .mono{font-family:"ServiceNow Mono",monospace;font-size:24px;letter-spacing:.18em;text-transform:uppercase;color:#63DF4E}
+  .h1{font-weight:700;font-size:144px;line-height:1.02;letter-spacing:-.01em}
+  .h1 em{font-style:normal;color:#63DF4E}
+  .num{font-family:"ServiceNow Sans Display",sans-serif;font-weight:700;font-size:240px;line-height:.85}
+  .lbl{font-weight:300;font-size:40px;line-height:1.1}
+  .logo{position:absolute;left:75px;top:1001px;width:154px}
+  #hud{position:fixed;left:12px;bottom:10px;font:12px/1 monospace;color:#9ab}
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- Scene 1: two-tone headline -->
+  <div class="layer" data-scene="headline" style="padding:300px 86px 0">
+    <div class="mono" data-anim="fade-up" data-delay="0">Autonomous workflows</div>
+    <div class="h1" style="margin-top:40px" data-anim="fade-up" data-delay="0.25"><em>You start it.</em><br>Otto finishes it.</div>
+  </div>
+  <!-- Scene 2: stat -->
+  <div class="layer" data-scene="stat" style="padding:280px 86px 0;display:flex;gap:120px;align-items:flex-end">
+    <div><div class="num" data-anim="count" data-to="100" data-suffix="B+">0</div>
+      <div class="lbl" data-anim="fade-up" data-delay="0.3">workflows<br>a year</div></div>
+    <div><div class="num" data-anim="count" data-to="90" data-suffix="%" data-delay="0.4">0</div>
+      <div class="lbl" data-anim="fade-up" data-delay="0.7">of the<br>Fortune 500</div></div>
+  </div>
+  <!-- Scene 3: closer -->
+  <div class="layer" data-scene="closer" style="padding:340px 86px 0">
+    <div class="h1" style="font-size:120px" data-anim="fade-up"><em>The platform</em><br>where AI gets to work.</div>
+  </div>
+  <img class="logo" src="../../assets/logos/servicenow-wordmark-white-footer.svg" alt="servicenow">
+</div>
+<div id="hud"></div>
+<script>
+// Edit scenes here: id matches data-scene, start/end in seconds, bg = CSS var from tokens/gradients.css
+const SCENES = [
+  { id: 'headline', start: 0,   end: 4,   bg: '--grad-dark-green' },
+  { id: 'stat',     start: 4,   end: 8.5, bg: '--grad-dark-blue' },
+  { id: 'closer',   start: 8.5, end: 12,  bg: '--grad-dark-indigo' },
+];
+const DURATION = SCENES[SCENES.length - 1].end, FADE = 0.4;
+const ease = t => { t = Math.min(1, Math.max(0, t)); return 1 - Math.pow(1 - t, 3); }; // calm ease-out
+const stage = document.getElementById('stage'), hud = document.getElementById('hud');
+const layers = SCENES.map(s => ({ ...s, el: stage.querySelector(`[data-scene="${s.id}"]`) }));
+
+function render(t) {
+  let active = layers[0];
+  for (const s of layers) {
+    const local = t - s.start;
+    const vis = Math.min(ease(local / FADE), ease((s.end - t) / FADE));
+    s.el.style.opacity = t >= s.start && t <= s.end ? vis : 0;
+    if (t >= s.start) active = s;
+    s.el.querySelectorAll('[data-anim]').forEach(el => {
+      const p = ease((local - (+el.dataset.delay || 0)) / 0.6);
+      if (el.dataset.anim === 'fade-up') { el.style.opacity = p; el.style.transform = `translateY(${(1 - p) * 40}px)`; }
+      if (el.dataset.anim === 'count') {
+        const c = ease((local - (+el.dataset.delay || 0)) / 1.4);
+        el.textContent = Math.round(c * +el.dataset.to) + (el.dataset.suffix || '');
+      }
+    });
+  }
+  stage.style.background = `var(${active.bg})`;
+  hud.textContent = render.hud ? `${t.toFixed(2)}s / ${DURATION}s · space play/pause · ←/→ scrub` : '';
+}
+
+// deterministic hooks for scripts/render_video.mjs
+window.__duration = DURATION;
+window.__seek = t => render(t);
+
+const rendering = new URLSearchParams(location.search).has('render');
+function fit() {
+  if (!rendering && (!innerWidth || !innerHeight)) return requestAnimationFrame(fit);
+  const s = rendering ? 1 : Math.min(innerWidth / 1920, innerHeight / 1080);
+  stage.style.transform = `translate(${(innerWidth - 1920 * s) / 2}px,${(innerHeight - 1080 * s) / 2}px) scale(${s})`;
+}
+addEventListener('resize', fit); new ResizeObserver(fit).observe(document.documentElement); fit();
+
+if (!rendering) {
+  render.hud = true;
+  let t = +localStorage.getItem('sn-anim-t') || 0, playing = true, last = performance.now();
+  const loop = now => {
+    if (playing) t = (t + (now - last) / 1000) % DURATION;
+    last = now; render(t); localStorage.setItem('sn-anim-t', t); requestAnimationFrame(loop);
+  };
+  addEventListener('keydown', e => {
+    if (e.code === 'Space') playing = !playing;
+    if (e.code === 'ArrowRight') t = Math.min(DURATION, t + 0.5);
+    if (e.code === 'ArrowLeft') t = Math.max(0, t - 0.5);
+  });
+  requestAnimationFrame(loop);
+} else { hud.remove(); render(0); }
+</script>
+</body>
+</html>

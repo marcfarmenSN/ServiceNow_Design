@@ -1,0 +1,20 @@
+<!-- @dsCard group="Components" viewport="700x394" name="SlideFrame" subtitle="1920×1080 slide shell, scaled" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;overflow:hidden;background:#032D42}#root{transform-origin:0 0}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const { SlideFrame } = window.ServiceNowDesignSystem_82fff6;
+function fit(){const s=window.innerWidth/1920;document.getElementById('root').style.transform=`scale(${s})`}
+window.addEventListener('resize',fit);fit();
+function App(){return(<SlideFrame hue="green" pageNumber={7} source="Source: Corporate PowerPoint Template v2.3">
+<div style={{position:'absolute',left:86,top:84,width:1747,fontSize:80,fontWeight:700,lineHeight:1.02}}>Title with subtitle</div>
+<div style={{position:'absolute',left:86,top:173,width:1747,fontSize:40,fontWeight:300,lineHeight:1.1}}>Optional subtitle</div>
+<div style={{position:'absolute',left:86,top:308,width:1100,fontSize:36,fontWeight:300,lineHeight:1.25}}>ServiceNow AI Platform unifies AI + Data + Workflows.</div>
+</SlideFrame>)}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>

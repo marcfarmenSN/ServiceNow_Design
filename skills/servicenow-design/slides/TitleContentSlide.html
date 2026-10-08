@@ -1,0 +1,24 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Title and content" subtitle="Title, subtitle, bulleted body" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Title and content</title><link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../_ds_bundle.js"></script><script src="stage.js"></script>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#021c29}#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;font-family:var(--font-brand);color:#fff}</style></head>
+<body><div id="stage" data-screen-label="Title and content"></div>
+<script type="text/babel">
+const { SlideFrame, Logo, Headline, StatCard, FeatureCard, Card, Pill, CapabilityTile, Icon } = window.ServiceNowDesignSystem_82fff6;
+const BG = n => '../assets/backgrounds/bg-' + n + '.png';
+function Slide(){return(<SlideFrame background={BG('content')} pageNumber={3} source="Source: ServiceNow internal data">
+<div style={{position:'absolute',left:86,top:84,width:1747,fontSize:80,fontWeight:700,lineHeight:1.02}}>Where AI gets to work</div>
+<div style={{position:'absolute',left:86,top:173,width:1747,fontSize:40,fontWeight:300,lineHeight:1.2}}>ServiceNow AI Platform unifies AI + Data + Workflows</div>
+<div style={{position:'absolute',left:86,top:308,width:1300,fontWeight:300,display:'flex',flexDirection:'column',gap:20}}>
+<div style={{fontSize:36}}>100 billion workflows a year, powering over 100K AI use cases.</div>
+<div style={{fontSize:32,paddingLeft:37,textIndent:-37}}>•&nbsp;&nbsp;For 90% of the Fortune 500</div>
+<div style={{fontSize:32,paddingLeft:37,textIndent:-37}}>•&nbsp;&nbsp;Leading in 36 market categories</div>
+<div style={{fontSize:28,paddingLeft:74,textIndent:-37}}>•&nbsp;&nbsp;With an industry-leading 97% renewal rate</div>
+</div>
+</SlideFrame>)}
+ReactDOM.createRoot(document.getElementById('stage')).render(<Slide/>); window.__fitStage && window.__fitStage();
+</script></body></html>

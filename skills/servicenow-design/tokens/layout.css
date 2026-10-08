@@ -1,0 +1,31 @@
+/* Layout, radius, border, elevation, motion. Slide geometry measured from the PPTX masters at 1920×1080. */
+:root{
+  --slide-w:1920px;--slide-h:1080px;
+  --slide-margin-x:86px;        /* title / content left edge */
+  --slide-margin-top:84px;      /* title top */
+  --slide-subtitle-top:173px;
+  --slide-content-top:283px;
+  --slide-gutter:28px;          /* column gap (2-col, cards) */
+  --slide-card-gap:30px;        /* 5-col cards */
+  --slide-footer-logo-x:75px;--slide-footer-logo-y:1001px;--slide-footer-logo-w:154px;--slide-footer-logo-h:44px;
+  --slide-page-num-x:1742px;
+
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:86px;
+
+  --radius-card:23px;           /* roundRect adj ≈7000 → ~22.7px on 1920 canvas */
+  --radius-card-sm:12px;
+  --radius-pill:999px;
+  --radius-mark:5.61px;         /* Figma logo mark */
+
+  --border-hair:1px;            /* 0.5pt line */
+
+  --shadow-none:none;
+  --shadow-glass:inset 0 1px 0 rgba(255,255,255,.12);
+  --shadow-glow-green:0 0 24px rgba(99,223,78,.45);
+  --blur-glass:12px;
+
+  --ease-standard:cubic-bezier(.2,0,0,1); /* @kind other */
+  --dur-fast:120ms; /* @kind other */
+  --dur-base:200ms; /* @kind other */
+  --dur-slow:400ms; /* @kind other */
+}

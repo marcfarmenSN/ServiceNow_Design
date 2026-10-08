@@ -1,0 +1,36 @@
+<!-- @dsCard group="Components" viewport="700x560" name="Content" subtitle="Card, FeatureCard, StatCard, Pill, Headline, CapabilityTile, MonoLabel" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;font-family:var(--font-brand);color:#fff}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const { GradientBackground, Card, FeatureCard, StatCard, Pill, Headline, CapabilityTile, MonoLabel } = window.ServiceNowDesignSystem_82fff6;
+const sc=.36;
+function App(){return(<GradientBackground hue="green" style={{minHeight:560}}><div style={{padding:18,display:'flex',flexDirection:'column',gap:12}}>
+<div style={{display:'flex',alignItems:'center',gap:14}}><MonoLabel size={11}>Single execution</MonoLabel><div style={{flex:1,height:1,background:'#fff'}}></div><MonoLabel size={11}>Multiple executions</MonoLabel></div>
+<Headline lead="ServiceNow was" rest="built for this moment" size={34} align="center"/>
+<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10}}>
+<FeatureCard scale={sc} title="Data" body={<>because AI is only as good as the context it has.</>}/>
+<StatCard scale={sc} value="97%+" label={<>renewal rate,<br/>20+ quarters</>}/>
+</div>
+<div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:8}}>
+<CapabilityTile scale={sc} hue="sense" title="Sense" label="Data"/>
+<CapabilityTile scale={sc} hue="decide" title="Decide" label="AI Model"/>
+<CapabilityTile scale={sc} hue="act" title="Act" label="Workflow"/>
+<CapabilityTile scale={sc} hue="secure" title="Secure" label="Asset"/>
+</div>
+<div style={{display:'flex',gap:8,flexWrap:'wrap',alignItems:'center'}}>
+<Pill scale={.5} tag="ANY">Cloud</Pill><Pill scale={.5} tag="ANY">System of Record</Pill><Pill scale={.5} variant="solid">AI Control Tower</Pill><Pill scale={.5}>Autonomous Workflows</Pill>
+</div>
+<div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:8}}>
+<Card variant="template" scale={.4}><div style={{color:'var(--sn-wasabi-green)',fontWeight:700,fontSize:14}}>Template card</div><div style={{fontWeight:300,fontSize:11,marginTop:6}}>5.3% Infinite Blue, 1px white line</div></Card>
+<Card variant="glass" scale={.4}><div style={{color:'var(--sn-blue)',fontWeight:700,fontSize:14}}>Glass card</div><div style={{fontWeight:300,fontSize:11,marginTop:6}}>Pitch-deck panel</div></Card>
+<Card variant="light" scale={.4}><div style={{fontWeight:700,fontSize:14}}>Light card</div><div style={{fontWeight:300,fontSize:11,marginTop:6}}>For light documents</div></Card>
+</div>
+</div></GradientBackground>)}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>
